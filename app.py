@@ -10,8 +10,8 @@ base_path = os.path.dirname(os.path.abspath(__file__))
 grok_key = os.getenv("GROK_API_KEY", "")
 
 if grok_key == "":
-    full_message = "API key not found. Please add it to the environment keys as GROK_API_KEY. You can do this by running in windows:\
-        \n\n```cmd \nsetx GROK_API_KEY \"your_api_key_here\" \n```\n\nor in linux:\n\n```bash \nexport GROK_API_KEY=\"your_api_key_here\" \n```"
+    full_message = "Chave da API não encontrada. Por favor, adicione-a às variáveis de ambiente como GROK_API_KEY. Você pode fazer isso no Windows executando:\
+        \n\n```cmd \nsetx GROK_API_KEY \"sua_chave_api_aqui\" \n```\n\nou no Linux:\n\n```bash \nexport GROK_API_KEY=\"sua_chave_api_aqui\" \n```"
     raise ValueError(full_message)
 
 
@@ -28,7 +28,7 @@ def ask_question(context, question):
             "model": "llama3-8b-8192",
             "messages": [{
                 "role": "system",
-                "content": "Assistente conversacional para responder perguntas baseadas em um contexto. É sempre educado e gentil, e finaliza todos os textos pedindo que envie uma nova pergunta no mesmo campo."
+                "content": "Assistente conversacional para responder perguntas baseadas em um contexto. É sempre educado e gentil, e finaliza todos os textos afirmando que está à disposição."
             },
             {
                 "role": "user",
